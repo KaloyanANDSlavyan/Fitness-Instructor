@@ -1,0 +1,16 @@
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\Fitness_Instructor.exe
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\Fitness_Instructor.deps.json
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\Fitness_Instructor.runtimeconfig.json
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\Fitness_Instructor.runtimeconfig.dev.json
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\Fitness_Instructor.dll
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\Fitness_Instructor.pdb
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.csprojAssemblyReference.cache
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.AssemblyInfoInputs.cache
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.AssemblyInfo.cs
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.csproj.CoreCompileInputs.cache
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.dll
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.pdb
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.genruntimeconfig.cache
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.csproj.GenerateResource.cache
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\Fitness_Instructor.dll.config
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.IntroForm.resources
