@@ -14,3 +14,4 @@ E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\net
 E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.csproj.GenerateResource.cache
 E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\Fitness_Instructor.dll.config
 E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.IntroForm.resources
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.Menu.resources
