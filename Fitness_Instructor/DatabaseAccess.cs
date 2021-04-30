@@ -21,7 +21,7 @@ namespace Fitness_Instructor
 
         public void insertClient(Client client)
         {
-            String query = "insert into Clients values(N'" + client.FirstName + "','" + client.LastName + "','"
+            String query = "insert into Clients values(N'" + client.FirstName + "',N'" + client.LastName + "','"
                 + client.Age.ToString() + "','" + client.Height.ToString() + "','" + client.Weight.ToString() + "','" + client.Gender + "')";
             command = new SqlCommand(query, connection);
 

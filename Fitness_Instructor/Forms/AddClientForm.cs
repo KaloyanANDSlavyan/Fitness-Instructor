@@ -11,6 +11,7 @@ namespace Fitness_Instructor
     public partial class AddClientForm : Form
     {
         private DatabaseAccess db;
+        private string gender = "undefined";
         public AddClientForm()
         {
             InitializeComponent();
@@ -31,25 +32,20 @@ namespace Fitness_Instructor
             client.Age = int.Parse(ageBox.Text);
             client.Height = float.Parse(heightBox.Text);
             client.Weight = float.Parse(weightBox.Text);
-            client.Gender = genderCheckBox.Text;
+            client.Gender = gender;
 
             db.insertClient(client);
         }
 
-        private void genderCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void maleButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (genderCheckBox.CheckState == CheckState.Checked)
-            {
-                genderCheckBox.Text = "Male";
-            }
-            else if (genderCheckBox.CheckState == CheckState.Unchecked)
-            {
-                genderCheckBox.Text = "Female";
-            }
-            else
-            {
-                genderCheckBox.Text = "undefined";
-            }
+            gender = "Male";
+
+        }
+
+        private void femaleButton_CheckedChanged(object sender, EventArgs e)
+        {
+            gender = "Female";
         }
     }
 }

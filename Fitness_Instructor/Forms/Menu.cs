@@ -39,6 +39,7 @@ namespace Fitness_Instructor
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
+            public static Color color2 = Color.FromArgb(3, 148, 252);
         }
         // Methods
         private void activateButton(object senderBtn, Color color)
@@ -81,13 +82,18 @@ namespace Fitness_Instructor
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            activateButton(sender, RGBColors.color1);
+            activateButton(sender, RGBColors.color2);
             openChildForm(new AddClientForm());
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            activateButton(sender, RGBColors.color1);
+            activateButton(sender, RGBColors.color2);
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            activateButton(sender, RGBColors.color2);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -95,6 +101,7 @@ namespace Fitness_Instructor
             currentChildForm.Close();
             Reset();
         }
+
 
         private void openChildForm(Form childForm)
         {
@@ -118,7 +125,7 @@ namespace Fitness_Instructor
             disableButton();
             leftBorderBtn.Visible = false;
             iconCurrentChildForm.IconChar = IconChar.Dumbbell;
-            iconCurrentChildForm.IconColor = Color.MediumPurple;
+            iconCurrentChildForm.IconColor = SystemColors.Highlight;
             lblTitleChildForm.Text = "Home";
         }
         //Drag Form
@@ -149,5 +156,7 @@ namespace Fitness_Instructor
             else
                 WindowState = FormWindowState.Normal;
         }
+
+     
     }
 }

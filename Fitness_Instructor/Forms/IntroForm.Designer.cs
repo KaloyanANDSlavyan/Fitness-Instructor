@@ -81,6 +81,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.Name = "IntroForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fitness Instructor";
             this.Load += new System.EventHandler(this.IntroForm_Load);
             this.ResumeLayout(false);

@@ -16,7 +16,9 @@ namespace Fitness_Instructor
         public IntroForm()
         {
             InitializeComponent();
-            
+
+            this.Text = null;
+            this.ControlBox = false;
         }
 
         private void IntroForm_Load(object sender, EventArgs e)

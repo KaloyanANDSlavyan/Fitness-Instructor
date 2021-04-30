@@ -30,19 +30,19 @@ namespace Fitness_Instructor
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.editButton = new FontAwesome.Sharp.IconButton();
             this.deleteButton = new FontAwesome.Sharp.IconButton();
             this.addButton = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Label();
             this.panelTopBar = new System.Windows.Forms.Panel();
+            this.minimizeButton = new System.Windows.Forms.Button();
+            this.restoreButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.exitButton = new System.Windows.Forms.Button();
-            this.restoreButton = new System.Windows.Forms.Button();
-            this.minimizeButton = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTopBar.SuspendLayout();
@@ -52,6 +52,7 @@ namespace Fitness_Instructor
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.panelMenu.Controls.Add(this.editButton);
             this.panelMenu.Controls.Add(this.deleteButton);
             this.panelMenu.Controls.Add(this.addButton);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -60,6 +61,28 @@ namespace Fitness_Instructor
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 623);
             this.panelMenu.TabIndex = 0;
+            // 
+            // editButton
+            // 
+            this.editButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.editButton.FlatAppearance.BorderSize = 0;
+            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.editButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.editButton.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.editButton.IconColor = System.Drawing.Color.Gainsboro;
+            this.editButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.editButton.IconSize = 42;
+            this.editButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editButton.Location = new System.Drawing.Point(0, 260);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(220, 60);
+            this.editButton.TabIndex = 3;
+            this.editButton.Text = "Edit Client";
+            this.editButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // deleteButton
             // 
@@ -141,6 +164,45 @@ namespace Fitness_Instructor
             this.panelTopBar.TabIndex = 1;
             this.panelTopBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTopBar_MouseDown);
             // 
+            // minimizeButton
+            // 
+            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeButton.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.minimizeButton.Location = new System.Drawing.Point(847, 13);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(29, 29);
+            this.minimizeButton.TabIndex = 4;
+            this.minimizeButton.Text = "_";
+            this.minimizeButton.UseVisualStyleBackColor = true;
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            // 
+            // restoreButton
+            // 
+            this.restoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.restoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.restoreButton.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.restoreButton.Location = new System.Drawing.Point(882, 13);
+            this.restoreButton.Name = "restoreButton";
+            this.restoreButton.Size = new System.Drawing.Size(31, 29);
+            this.restoreButton.TabIndex = 3;
+            this.restoreButton.Text = "[]";
+            this.restoreButton.UseVisualStyleBackColor = true;
+            this.restoreButton.Click += new System.EventHandler(this.restoreButton_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exitButton.Location = new System.Drawing.Point(919, 13);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(31, 29);
+            this.exitButton.TabIndex = 2;
+            this.exitButton.Text = "X";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // lblTitleChildForm
             // 
             this.lblTitleChildForm.AutoSize = true;
@@ -172,7 +234,7 @@ namespace Fitness_Instructor
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(220, 75);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(962, 9);
+            this.panelShadow.Size = new System.Drawing.Size(962, 3);
             this.panelShadow.TabIndex = 2;
             // 
             // panelDesktop
@@ -184,61 +246,12 @@ namespace Fitness_Instructor
             this.panelDesktop.Size = new System.Drawing.Size(962, 539);
             this.panelDesktop.TabIndex = 3;
             // 
-            // iconButton1
-            // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(220, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(8, 8);
-            this.iconButton1.TabIndex = 4;
-            this.iconButton1.Text = "iconButton1";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // exitButton
-            // 
-            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.exitButton.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.exitButton.Location = new System.Drawing.Point(919, 13);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(31, 29);
-            this.exitButton.TabIndex = 2;
-            this.exitButton.Text = "X";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // restoreButton
-            // 
-            this.restoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.restoreButton.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.restoreButton.Location = new System.Drawing.Point(882, 13);
-            this.restoreButton.Name = "restoreButton";
-            this.restoreButton.Size = new System.Drawing.Size(31, 29);
-            this.restoreButton.TabIndex = 3;
-            this.restoreButton.Text = "[]";
-            this.restoreButton.UseVisualStyleBackColor = true;
-            this.restoreButton.Click += new System.EventHandler(this.restoreButton_Click);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.minimizeButton.Location = new System.Drawing.Point(845, 13);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(31, 29);
-            this.minimizeButton.TabIndex = 4;
-            this.minimizeButton.Text = "_";
-            this.minimizeButton.UseVisualStyleBackColor = true;
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1182, 623);
-            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTopBar);
@@ -246,6 +259,7 @@ namespace Fitness_Instructor
             this.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.Highlight;
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -270,8 +284,8 @@ namespace Fitness_Instructor
         private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Button exitButton;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Button minimizeButton;
         private System.Windows.Forms.Button restoreButton;
+        private FontAwesome.Sharp.IconButton editButton;
     }
 }
