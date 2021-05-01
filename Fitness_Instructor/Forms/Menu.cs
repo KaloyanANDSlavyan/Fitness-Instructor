@@ -86,14 +86,10 @@ namespace Fitness_Instructor
             openChildForm(new AddClientForm());
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
-        {
-            activateButton(sender, RGBColors.color2);
-        }
-
         private void editButton_Click(object sender, EventArgs e)
         {
             activateButton(sender, RGBColors.color2);
+            openChildForm(new EditClientForm());
         }
 
         private void btnHome_Click(object sender, EventArgs e)

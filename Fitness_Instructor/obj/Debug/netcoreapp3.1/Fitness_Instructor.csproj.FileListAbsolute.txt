@@ -40,3 +40,4 @@ E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\bin\Debug\net
 E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.csproj.CopyComplete
 E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\FontAwesome.Sharp.dll
 E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.AddClientForm.resources
+E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.EditClientForm.resources

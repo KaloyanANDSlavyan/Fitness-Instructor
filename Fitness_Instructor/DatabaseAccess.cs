@@ -4,6 +4,7 @@ using System.Text;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 
 namespace Fitness_Instructor
@@ -35,7 +36,55 @@ namespace Fitness_Instructor
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Нещо са прееба брат");
+                MessageBox.Show("Неуспех");
+            }
+        }
+
+        public object outputClients()
+        {
+            String query = "SELECT * FROM Clients";
+            command = new SqlCommand(query, connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            return dt;
+        }
+
+        public void deleteClient(int id)
+        {
+            String query = "DELETE FROM Clients WHERE Id = '" + id + "'";
+            command = new SqlCommand(query, connection);
+
+            try
+            {
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+                command.Connection.Close();
+                MessageBox.Show("Успешно изтрит клиент!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Неуспех");
+            }
+        }
+
+        public void updateClient(int id, String firstName, String lastName, String age, String height, String weight)
+        {
+            String query = "UPDATE Clients SET firstName='" + firstName + "',lastName='" + lastName + "',age='" + age + "',height='" + height + "',weight='" + weight + "' WHERE Id='"+ id + "'";
+            command = new SqlCommand(query, connection);
+
+            try
+            {
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+                command.Connection.Close();
+                MessageBox.Show("Успешно редактиран клиент!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Неуспех");
             }
         }
 

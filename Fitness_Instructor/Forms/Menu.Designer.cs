@@ -31,7 +31,6 @@ namespace Fitness_Instructor
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.editButton = new FontAwesome.Sharp.IconButton();
-            this.deleteButton = new FontAwesome.Sharp.IconButton();
             this.addButton = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@ namespace Fitness_Instructor
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
             this.panelMenu.Controls.Add(this.editButton);
-            this.panelMenu.Controls.Add(this.deleteButton);
             this.panelMenu.Controls.Add(this.addButton);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -74,7 +72,7 @@ namespace Fitness_Instructor
             this.editButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.editButton.IconSize = 42;
             this.editButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editButton.Location = new System.Drawing.Point(0, 260);
+            this.editButton.Location = new System.Drawing.Point(0, 200);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(220, 60);
             this.editButton.TabIndex = 3;
@@ -83,28 +81,6 @@ namespace Fitness_Instructor
             this.editButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.deleteButton.FlatAppearance.BorderSize = 0;
-            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deleteButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.deleteButton.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.deleteButton.IconColor = System.Drawing.Color.Gainsboro;
-            this.deleteButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.deleteButton.IconSize = 42;
-            this.deleteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteButton.Location = new System.Drawing.Point(0, 200);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(220, 60);
-            this.deleteButton.TabIndex = 2;
-            this.deleteButton.Text = "Remove Client";
-            this.deleteButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // addButton
             // 
@@ -274,7 +250,6 @@ namespace Fitness_Instructor
         #endregion
 
         private System.Windows.Forms.Panel panelMenu;
-        private FontAwesome.Sharp.IconButton deleteButton;
         private FontAwesome.Sharp.IconButton addButton;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Label btnHome;
