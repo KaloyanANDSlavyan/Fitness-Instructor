@@ -11,7 +11,7 @@ namespace Fitness_Instructor
 {
     class DatabaseAccess
     {
-        private String conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Study related\VS Projects\Fitness_Instructor\Fitness_Instructor\FSDatabase.mdf;Integrated Security=True";
+        private String conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Rado\Desktop\Fitness Instructor\Fitness-Instructor\Fitness_Instructor\FSDatabase.mdf;Integrated Security=True";
         private SqlConnection connection;
         private SqlCommand command;
 
@@ -19,6 +19,21 @@ namespace Fitness_Instructor
         {
             connection = new SqlConnection(conString);
         }
+
+        public object DisplayExercise(int MuscleGroupFK)
+        {
+
+            String query = "SELECT * FROM Exercises WHERE Muscle_Group_FK = '" + MuscleGroupFK + "'";
+            command = new SqlCommand(query, connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            return dt;
+        }
+
+
+
+
 
         public void insertClient(Client client)
         {

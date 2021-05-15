@@ -42,6 +42,7 @@ namespace Fitness_Instructor
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.exercise1 = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTopBar.SuspendLayout();
@@ -51,6 +52,7 @@ namespace Fitness_Instructor
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.panelMenu.Controls.Add(this.exercise1);
             this.panelMenu.Controls.Add(this.editButton);
             this.panelMenu.Controls.Add(this.addButton);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -65,7 +67,7 @@ namespace Fitness_Instructor
             this.editButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.editButton.FlatAppearance.BorderSize = 0;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.editButton.ForeColor = System.Drawing.Color.Gainsboro;
             this.editButton.IconChar = FontAwesome.Sharp.IconChar.Pen;
             this.editButton.IconColor = System.Drawing.Color.Gainsboro;
@@ -87,7 +89,7 @@ namespace Fitness_Instructor
             this.addButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addButton.ForeColor = System.Drawing.Color.Gainsboro;
             this.addButton.IconChar = FontAwesome.Sharp.IconChar.User;
             this.addButton.IconColor = System.Drawing.Color.Gainsboro;
@@ -120,7 +122,7 @@ namespace Fitness_Instructor
             this.btnHome.Location = new System.Drawing.Point(53, 21);
             this.btnHome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(115, 98);
+            this.btnHome.Size = new System.Drawing.Size(92, 80);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "FS";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -182,11 +184,11 @@ namespace Fitness_Instructor
             // lblTitleChildForm
             // 
             this.lblTitleChildForm.AutoSize = true;
-            this.lblTitleChildForm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitleChildForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTitleChildForm.Location = new System.Drawing.Point(84, 29);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(69, 23);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(52, 20);
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Home";
             // 
@@ -221,10 +223,33 @@ namespace Fitness_Instructor
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(962, 539);
             this.panelDesktop.TabIndex = 3;
+            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
+            // 
+            // exercise1
+            // 
+            this.exercise1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.exercise1.FlatAppearance.BorderSize = 0;
+            this.exercise1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exercise1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exercise1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.exercise1.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.exercise1.IconColor = System.Drawing.Color.Gainsboro;
+            this.exercise1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.exercise1.IconSize = 42;
+            this.exercise1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exercise1.Location = new System.Drawing.Point(0, 260);
+            this.exercise1.Name = "exercise1";
+            this.exercise1.Size = new System.Drawing.Size(220, 60);
+            this.exercise1.TabIndex = 4;
+            this.exercise1.Text = "Edit Client";
+            this.exercise1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exercise1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.exercise1.UseVisualStyleBackColor = true;
+            this.exercise1.Click += new System.EventHandler(this.Exercisebutton_click);
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1182, 623);
@@ -232,11 +257,12 @@ namespace Fitness_Instructor
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTopBar);
             this.Controls.Add(this.panelMenu);
-            this.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.Highlight;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
@@ -262,5 +288,6 @@ namespace Fitness_Instructor
         private System.Windows.Forms.Button minimizeButton;
         private System.Windows.Forms.Button restoreButton;
         private FontAwesome.Sharp.IconButton editButton;
+        private FontAwesome.Sharp.IconButton exercise1;
     }
 }

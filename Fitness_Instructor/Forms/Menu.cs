@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
+using Fitness_Instructor.Forms;
 
 namespace Fitness_Instructor
 {
@@ -153,6 +154,21 @@ namespace Fitness_Instructor
                 WindowState = FormWindowState.Normal;
         }
 
-     
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Exercisebutton_click(object sender, EventArgs e)
+        {
+            activateButton(sender, RGBColors.color2);
+            openChildForm(new ExerciseForm());
+
+        }
     }
 }
