@@ -170,5 +170,11 @@ namespace Fitness_Instructor
             openChildForm(new ExerciseForm());
 
         }
+
+        private void caloriesButton_Click(object sender, EventArgs e)
+        {
+            activateButton(sender, RGBColors.color2);
+            openChildForm(new CaloriesCalculatorForm());
+        }
     }
 }

@@ -1441,19 +1441,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rado\\.nuget\\packages\\": {}
+    "C:\\Users\\Slavyan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rado\\Desktop\\Fitness Instructor\\Fitness-Instructor\\Fitness_Instructor\\Fitness_Instructor.csproj",
+      "projectUniqueName": "E:\\Study related\\VS Projects\\Fitness_Instructor v2\\Fitness-Instructor\\Fitness_Instructor\\Fitness_Instructor.csproj",
       "projectName": "Fitness_Instructor",
-      "projectPath": "C:\\Users\\Rado\\Desktop\\Fitness Instructor\\Fitness-Instructor\\Fitness_Instructor\\Fitness_Instructor.csproj",
-      "packagesPath": "C:\\Users\\Rado\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rado\\Desktop\\Fitness Instructor\\Fitness-Instructor\\Fitness_Instructor\\obj\\",
+      "projectPath": "E:\\Study related\\VS Projects\\Fitness_Instructor v2\\Fitness-Instructor\\Fitness_Instructor\\Fitness_Instructor.csproj",
+      "packagesPath": "C:\\Users\\Slavyan\\.nuget\\packages\\",
+      "outputPath": "E:\\Study related\\VS Projects\\Fitness_Instructor v2\\Fitness-Instructor\\Fitness_Instructor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Rado\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Slavyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1506,14 +1506,11 @@
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           },
-          "Microsoft.WindowsDesktop.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.WindowsDesktop.App.WindowsForms": {
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

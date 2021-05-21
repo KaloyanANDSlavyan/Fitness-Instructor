@@ -29,6 +29,7 @@ namespace Fitness_Instructor
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.firstNameBox = new System.Windows.Forms.TextBox();
             this.addClientButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,6 +48,8 @@ namespace Fitness_Instructor
             this.weightBox = new System.Windows.Forms.TextBox();
             this.maleButton = new System.Windows.Forms.RadioButton();
             this.femaleButton = new System.Windows.Forms.RadioButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // firstNameBox
@@ -55,17 +58,18 @@ namespace Fitness_Instructor
             this.firstNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.firstNameBox.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.firstNameBox.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.firstNameBox.Location = new System.Drawing.Point(311, 46);
+            this.firstNameBox.Location = new System.Drawing.Point(337, 64);
             this.firstNameBox.Name = "firstNameBox";
             this.firstNameBox.Size = new System.Drawing.Size(250, 21);
             this.firstNameBox.TabIndex = 0;
+            this.firstNameBox.Validating += new System.ComponentModel.CancelEventHandler(this.firstNameBox_Validating);
             // 
             // addClientButton
             // 
             this.addClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addClientButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addClientButton.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.addClientButton.Location = new System.Drawing.Point(311, 497);
+            this.addClientButton.Location = new System.Drawing.Point(337, 531);
             this.addClientButton.Name = "addClientButton";
             this.addClientButton.Size = new System.Drawing.Size(250, 29);
             this.addClientButton.TabIndex = 5;
@@ -78,7 +82,7 @@ namespace Fitness_Instructor
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(381, 22);
+            this.label1.Location = new System.Drawing.Point(407, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 21);
             this.label1.TabIndex = 7;
@@ -87,7 +91,7 @@ namespace Fitness_Instructor
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.Location = new System.Drawing.Point(311, 73);
+            this.panel1.Location = new System.Drawing.Point(337, 91);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 3);
             this.panel1.TabIndex = 8;
@@ -95,7 +99,7 @@ namespace Fitness_Instructor
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel2.Location = new System.Drawing.Point(311, 164);
+            this.panel2.Location = new System.Drawing.Point(337, 182);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 3);
             this.panel2.TabIndex = 11;
@@ -105,7 +109,7 @@ namespace Fitness_Instructor
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(381, 113);
+            this.label2.Location = new System.Drawing.Point(407, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 21);
             this.label2.TabIndex = 10;
@@ -117,15 +121,16 @@ namespace Fitness_Instructor
             this.lastNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lastNameBox.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lastNameBox.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lastNameBox.Location = new System.Drawing.Point(311, 137);
+            this.lastNameBox.Location = new System.Drawing.Point(337, 155);
             this.lastNameBox.Name = "lastNameBox";
             this.lastNameBox.Size = new System.Drawing.Size(250, 21);
             this.lastNameBox.TabIndex = 9;
+            this.lastNameBox.Validating += new System.ComponentModel.CancelEventHandler(this.lastNameBox_Validating);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel3.Location = new System.Drawing.Point(311, 245);
+            this.panel3.Location = new System.Drawing.Point(337, 263);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(250, 3);
             this.panel3.TabIndex = 14;
@@ -135,7 +140,7 @@ namespace Fitness_Instructor
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(405, 194);
+            this.label3.Location = new System.Drawing.Point(431, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 21);
             this.label3.TabIndex = 13;
@@ -147,15 +152,16 @@ namespace Fitness_Instructor
             this.ageBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ageBox.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ageBox.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.ageBox.Location = new System.Drawing.Point(311, 218);
+            this.ageBox.Location = new System.Drawing.Point(337, 236);
             this.ageBox.Name = "ageBox";
             this.ageBox.Size = new System.Drawing.Size(250, 21);
             this.ageBox.TabIndex = 12;
+            this.ageBox.Validating += new System.ComponentModel.CancelEventHandler(this.ageBox_Validating);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel4.Location = new System.Drawing.Point(311, 329);
+            this.panel4.Location = new System.Drawing.Point(337, 347);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(250, 3);
             this.panel4.TabIndex = 17;
@@ -165,7 +171,7 @@ namespace Fitness_Instructor
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(401, 278);
+            this.label4.Location = new System.Drawing.Point(427, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 21);
             this.label4.TabIndex = 16;
@@ -177,15 +183,16 @@ namespace Fitness_Instructor
             this.heightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.heightBox.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.heightBox.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.heightBox.Location = new System.Drawing.Point(311, 302);
+            this.heightBox.Location = new System.Drawing.Point(337, 320);
             this.heightBox.Name = "heightBox";
             this.heightBox.Size = new System.Drawing.Size(250, 21);
             this.heightBox.TabIndex = 15;
+            this.heightBox.Validating += new System.ComponentModel.CancelEventHandler(this.heightBox_Validating);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel5.Location = new System.Drawing.Point(311, 412);
+            this.panel5.Location = new System.Drawing.Point(337, 430);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(250, 3);
             this.panel5.TabIndex = 20;
@@ -195,7 +202,7 @@ namespace Fitness_Instructor
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label5.Location = new System.Drawing.Point(396, 361);
+            this.label5.Location = new System.Drawing.Point(422, 379);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 21);
             this.label5.TabIndex = 19;
@@ -207,17 +214,18 @@ namespace Fitness_Instructor
             this.weightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.weightBox.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.weightBox.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.weightBox.Location = new System.Drawing.Point(311, 385);
+            this.weightBox.Location = new System.Drawing.Point(337, 403);
             this.weightBox.Name = "weightBox";
             this.weightBox.Size = new System.Drawing.Size(250, 21);
             this.weightBox.TabIndex = 18;
+            this.weightBox.Validating += new System.ComponentModel.CancelEventHandler(this.weightBox_Validating);
             // 
             // maleButton
             // 
             this.maleButton.AutoSize = true;
             this.maleButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.maleButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.maleButton.Location = new System.Drawing.Point(405, 430);
+            this.maleButton.Location = new System.Drawing.Point(431, 448);
             this.maleButton.Name = "maleButton";
             this.maleButton.Size = new System.Drawing.Size(74, 25);
             this.maleButton.TabIndex = 21;
@@ -231,7 +239,7 @@ namespace Fitness_Instructor
             this.femaleButton.AutoSize = true;
             this.femaleButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.femaleButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.femaleButton.Location = new System.Drawing.Point(405, 460);
+            this.femaleButton.Location = new System.Drawing.Point(431, 478);
             this.femaleButton.Name = "femaleButton";
             this.femaleButton.Size = new System.Drawing.Size(91, 25);
             this.femaleButton.TabIndex = 22;
@@ -240,12 +248,16 @@ namespace Fitness_Instructor
             this.femaleButton.UseVisualStyleBackColor = true;
             this.femaleButton.CheckedChanged += new System.EventHandler(this.femaleButton_CheckedChanged);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AddClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(944, 538);
+            this.ClientSize = new System.Drawing.Size(1026, 610);
             this.Controls.Add(this.femaleButton);
             this.Controls.Add(this.maleButton);
             this.Controls.Add(this.panel5);
@@ -267,6 +279,7 @@ namespace Fitness_Instructor
             this.Name = "AddClientForm";
             this.Text = "AddClientForm";
             this.Load += new System.EventHandler(this.AddClientForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,5 +305,6 @@ namespace Fitness_Instructor
         private System.Windows.Forms.TextBox weightBox;
         private System.Windows.Forms.RadioButton maleButton;
         private System.Windows.Forms.RadioButton femaleButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

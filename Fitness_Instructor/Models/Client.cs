@@ -14,5 +14,6 @@ namespace Fitness_Instructor
         public float Height { get; set; }
         public float Weight { get; set; }
         public String Gender { get; set; }
+        public float Calories { get; set; }
     }
 }

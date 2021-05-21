@@ -12,6 +12,7 @@ namespace Fitness_Instructor
     {
         private DatabaseAccess db;
         private string gender = "undefined";
+        private TextValidator validator;
         public AddClientForm()
         {
             InitializeComponent();
@@ -46,6 +47,48 @@ namespace Fitness_Instructor
         private void femaleButton_CheckedChanged(object sender, EventArgs e)
         {
             gender = "Female";
+        }
+
+        private void base_Validating(TextBox textBox, string errorMsg, String pattern, CancelEventArgs e)
+        {
+            validator = new TextValidator(pattern, textBox.Text);
+            bool state = validator.regexValidator();
+
+            if (state)
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBox, "");
+            }
+            else
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox, errorMsg);
+            }
+        }
+
+        private void firstNameBox_Validating(object sender, CancelEventArgs e)
+        {
+            base_Validating(firstNameBox, "Enter valid first name!", @"(^[А-ЯA-Z][а-яa-z]{2,}$)", e);
+        }
+
+        private void lastNameBox_Validating(object sender, CancelEventArgs e)
+        {
+            base_Validating(lastNameBox, "Enter valid last name!", @"(^[А-ЯA-Z][а-яa-z]{2,}$)", e);
+        }
+
+        private void ageBox_Validating(object sender, CancelEventArgs e)
+        {
+            base_Validating(ageBox, "Enter valid age!", @"^\d{0,3}$", e);
+        }
+
+        private void heightBox_Validating(object sender, CancelEventArgs e)
+        {
+            base_Validating(heightBox, "Enter valid height!", @"^\d{0,3}$", e);    // @"(^[1 - 2].[0 - 9]{ 2}$)
+        }
+
+        private void weightBox_Validating(object sender, CancelEventArgs e)
+        {
+            base_Validating(weightBox, "Enter valid weight!", @"^\d{0,3}$", e);
         }
     }
 }

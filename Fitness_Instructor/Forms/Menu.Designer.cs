@@ -30,6 +30,7 @@ namespace Fitness_Instructor
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.exerciseButton = new FontAwesome.Sharp.IconButton();
             this.editButton = new FontAwesome.Sharp.IconButton();
             this.addButton = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -42,7 +43,7 @@ namespace Fitness_Instructor
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.exercise1 = new FontAwesome.Sharp.IconButton();
+            this.caloriesButton = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTopBar.SuspendLayout();
@@ -52,22 +53,45 @@ namespace Fitness_Instructor
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.panelMenu.Controls.Add(this.exercise1);
+            this.panelMenu.Controls.Add(this.caloriesButton);
+            this.panelMenu.Controls.Add(this.exerciseButton);
             this.panelMenu.Controls.Add(this.editButton);
             this.panelMenu.Controls.Add(this.addButton);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 623);
+            this.panelMenu.Size = new System.Drawing.Size(220, 753);
             this.panelMenu.TabIndex = 0;
+            // 
+            // exerciseButton
+            // 
+            this.exerciseButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.exerciseButton.FlatAppearance.BorderSize = 0;
+            this.exerciseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exerciseButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exerciseButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.exerciseButton.IconChar = FontAwesome.Sharp.IconChar.Heartbeat;
+            this.exerciseButton.IconColor = System.Drawing.Color.Gainsboro;
+            this.exerciseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.exerciseButton.IconSize = 42;
+            this.exerciseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exerciseButton.Location = new System.Drawing.Point(0, 260);
+            this.exerciseButton.Name = "exerciseButton";
+            this.exerciseButton.Size = new System.Drawing.Size(220, 60);
+            this.exerciseButton.TabIndex = 4;
+            this.exerciseButton.Text = "Exercises";
+            this.exerciseButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exerciseButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.exerciseButton.UseVisualStyleBackColor = true;
+            this.exerciseButton.Click += new System.EventHandler(this.Exercisebutton_click);
             // 
             // editButton
             // 
             this.editButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.editButton.FlatAppearance.BorderSize = 0;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.editButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.editButton.ForeColor = System.Drawing.Color.Gainsboro;
             this.editButton.IconChar = FontAwesome.Sharp.IconChar.Pen;
             this.editButton.IconColor = System.Drawing.Color.Gainsboro;
@@ -89,7 +113,7 @@ namespace Fitness_Instructor
             this.addButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addButton.ForeColor = System.Drawing.Color.Gainsboro;
             this.addButton.IconChar = FontAwesome.Sharp.IconChar.User;
             this.addButton.IconColor = System.Drawing.Color.Gainsboro;
@@ -122,7 +146,7 @@ namespace Fitness_Instructor
             this.btnHome.Location = new System.Drawing.Point(53, 21);
             this.btnHome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(92, 80);
+            this.btnHome.Size = new System.Drawing.Size(115, 98);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "FS";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -138,7 +162,7 @@ namespace Fitness_Instructor
             this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopBar.Location = new System.Drawing.Point(220, 0);
             this.panelTopBar.Name = "panelTopBar";
-            this.panelTopBar.Size = new System.Drawing.Size(962, 75);
+            this.panelTopBar.Size = new System.Drawing.Size(1062, 75);
             this.panelTopBar.TabIndex = 1;
             this.panelTopBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTopBar_MouseDown);
             // 
@@ -147,7 +171,7 @@ namespace Fitness_Instructor
             this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeButton.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.minimizeButton.Location = new System.Drawing.Point(847, 13);
+            this.minimizeButton.Location = new System.Drawing.Point(947, 13);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.Size = new System.Drawing.Size(29, 29);
             this.minimizeButton.TabIndex = 4;
@@ -160,7 +184,7 @@ namespace Fitness_Instructor
             this.restoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.restoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.restoreButton.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.restoreButton.Location = new System.Drawing.Point(882, 13);
+            this.restoreButton.Location = new System.Drawing.Point(982, 13);
             this.restoreButton.Name = "restoreButton";
             this.restoreButton.Size = new System.Drawing.Size(31, 29);
             this.restoreButton.TabIndex = 3;
@@ -173,7 +197,7 @@ namespace Fitness_Instructor
             this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.exitButton.Location = new System.Drawing.Point(919, 13);
+            this.exitButton.Location = new System.Drawing.Point(1019, 13);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(31, 29);
             this.exitButton.TabIndex = 2;
@@ -184,11 +208,11 @@ namespace Fitness_Instructor
             // lblTitleChildForm
             // 
             this.lblTitleChildForm.AutoSize = true;
-            this.lblTitleChildForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitleChildForm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTitleChildForm.Location = new System.Drawing.Point(84, 29);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(52, 20);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(69, 23);
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Home";
             // 
@@ -212,47 +236,47 @@ namespace Fitness_Instructor
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(220, 75);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(962, 3);
+            this.panelShadow.Size = new System.Drawing.Size(1062, 3);
             this.panelShadow.TabIndex = 2;
             // 
             // panelDesktop
             // 
             this.panelDesktop.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDesktop.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panelDesktop.Location = new System.Drawing.Point(220, 84);
+            this.panelDesktop.Location = new System.Drawing.Point(226, 84);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(962, 539);
+            this.panelDesktop.Size = new System.Drawing.Size(1044, 657);
             this.panelDesktop.TabIndex = 3;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
-            // exercise1
+            // caloriesButton
             // 
-            this.exercise1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.exercise1.FlatAppearance.BorderSize = 0;
-            this.exercise1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exercise1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exercise1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.exercise1.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.exercise1.IconColor = System.Drawing.Color.Gainsboro;
-            this.exercise1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.exercise1.IconSize = 42;
-            this.exercise1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exercise1.Location = new System.Drawing.Point(0, 260);
-            this.exercise1.Name = "exercise1";
-            this.exercise1.Size = new System.Drawing.Size(220, 60);
-            this.exercise1.TabIndex = 4;
-            this.exercise1.Text = "Edit Client";
-            this.exercise1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exercise1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.exercise1.UseVisualStyleBackColor = true;
-            this.exercise1.Click += new System.EventHandler(this.Exercisebutton_click);
+            this.caloriesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.caloriesButton.FlatAppearance.BorderSize = 0;
+            this.caloriesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.caloriesButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.caloriesButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.caloriesButton.IconChar = FontAwesome.Sharp.IconChar.FireAlt;
+            this.caloriesButton.IconColor = System.Drawing.Color.Gainsboro;
+            this.caloriesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.caloriesButton.IconSize = 42;
+            this.caloriesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.caloriesButton.Location = new System.Drawing.Point(0, 320);
+            this.caloriesButton.Name = "caloriesButton";
+            this.caloriesButton.Size = new System.Drawing.Size(220, 60);
+            this.caloriesButton.TabIndex = 5;
+            this.caloriesButton.Text = "Calculator";
+            this.caloriesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.caloriesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.caloriesButton.UseVisualStyleBackColor = true;
+            this.caloriesButton.Click += new System.EventHandler(this.caloriesButton_Click);
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1182, 623);
+            this.ClientSize = new System.Drawing.Size(1282, 753);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTopBar);
@@ -288,6 +312,7 @@ namespace Fitness_Instructor
         private System.Windows.Forms.Button minimizeButton;
         private System.Windows.Forms.Button restoreButton;
         private FontAwesome.Sharp.IconButton editButton;
-        private FontAwesome.Sharp.IconButton exercise1;
+        private FontAwesome.Sharp.IconButton exerciseButton;
+        private FontAwesome.Sharp.IconButton caloriesButton;
     }
 }
