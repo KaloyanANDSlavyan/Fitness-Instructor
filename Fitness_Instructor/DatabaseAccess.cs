@@ -77,6 +77,25 @@ namespace Fitness_Instructor
             }
         }
 
+        public void insertBMI(double BMI, int Id)
+        {
+            String query = "UPDATE Clients SET BMI = '" + BMI + "' WHERE Id = '" + Id + "'";
+
+            command = new SqlCommand(query, connection);
+
+            try
+            {
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+                command.Connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Неуспех");
+            }
+        }
+
         public object outputClients()
         {
             String query = "SELECT * FROM Clients";

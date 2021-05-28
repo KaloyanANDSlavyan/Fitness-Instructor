@@ -14,6 +14,7 @@ namespace Fitness_Instructor
         private Client client;
         private double BMR;
         private double calories;
+        private double BMI;
         private DatabaseAccess databaseAccess;
 
         public CaloriesCalculatorForm()
@@ -29,11 +30,15 @@ namespace Fitness_Instructor
                 MessageBox.Show("Please double click a row.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else { 
             calcCalories(client);
+                calcBMI(client);
             if (gainRadioButton.Checked == true)
                 calories += 500;
             else if (loseRadioButton.Checked == true)
                 calories -= 500;
+                double result = calcBMI(client);
+                BMI = Math.Round(result, 2);
             databaseAccess.insertCalories(calories, clientId);
+                databaseAccess.insertBMI(BMI, clientId);
             dataGridView1.DataSource = databaseAccess.outputClients();
             }
         }
@@ -49,8 +54,7 @@ namespace Fitness_Instructor
             client.Weight = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
             client.Gender = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
           
-            
-            
+           
         }
         private double formulaGetter(float weight, float height, int age, bool genderFlag)
         {
@@ -59,6 +63,7 @@ namespace Fitness_Instructor
 
             return 10 * weight + 6.25 * height - 5 * age -161;
         }
+        
 
         private double calcBMR(Client client)
         {
@@ -73,6 +78,12 @@ namespace Fitness_Instructor
             }
            
             return BMR;
+        }
+
+        private double calcBMI(Client client)
+        {
+           
+            return client.Weight / (client.Height * client.Height / 10000);
         }
 
         private void calcCalories(Client client)        // ti
