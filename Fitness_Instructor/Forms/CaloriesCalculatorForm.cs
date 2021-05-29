@@ -35,10 +35,9 @@ namespace Fitness_Instructor
                 calories += 500;
             else if (loseRadioButton.Checked == true)
                 calories -= 500;
-                double result = calcBMI(client);
-                BMI = Math.Round(result, 2);
-            databaseAccess.insertCalories(calories, clientId);
-                databaseAccess.insertBMI(BMI, clientId);
+                BMI = calcBMI(client);
+                BMI = Math.Round(BMI, 2);
+            databaseAccess.updateCaloriesBMI(calories, BMI, clientId);
             dataGridView1.DataSource = databaseAccess.outputClients();
             }
         }
@@ -86,7 +85,7 @@ namespace Fitness_Instructor
             return client.Weight / (client.Height * client.Height / 10000);
         }
 
-        private void calcCalories(Client client)        // ti
+        private void calcCalories(Client client) 
         {
           
             if (comboBox1.SelectedIndex == 0)

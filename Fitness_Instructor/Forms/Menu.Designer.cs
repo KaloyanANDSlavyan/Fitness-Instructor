@@ -30,6 +30,7 @@ namespace Fitness_Instructor
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.caloriesButton = new FontAwesome.Sharp.IconButton();
             this.exerciseButton = new FontAwesome.Sharp.IconButton();
             this.editButton = new FontAwesome.Sharp.IconButton();
             this.addButton = new FontAwesome.Sharp.IconButton();
@@ -43,11 +44,12 @@ namespace Fitness_Instructor
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.caloriesButton = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
+            this.panelDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -63,6 +65,28 @@ namespace Fitness_Instructor
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 753);
             this.panelMenu.TabIndex = 0;
+            // 
+            // caloriesButton
+            // 
+            this.caloriesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.caloriesButton.FlatAppearance.BorderSize = 0;
+            this.caloriesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.caloriesButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.caloriesButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.caloriesButton.IconChar = FontAwesome.Sharp.IconChar.FireAlt;
+            this.caloriesButton.IconColor = System.Drawing.Color.Gainsboro;
+            this.caloriesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.caloriesButton.IconSize = 42;
+            this.caloriesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.caloriesButton.Location = new System.Drawing.Point(0, 320);
+            this.caloriesButton.Name = "caloriesButton";
+            this.caloriesButton.Size = new System.Drawing.Size(220, 60);
+            this.caloriesButton.TabIndex = 5;
+            this.caloriesButton.Text = "Calculator";
+            this.caloriesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.caloriesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.caloriesButton.UseVisualStyleBackColor = true;
+            this.caloriesButton.Click += new System.EventHandler(this.caloriesButton_Click);
             // 
             // exerciseButton
             // 
@@ -242,6 +266,7 @@ namespace Fitness_Instructor
             // panelDesktop
             // 
             this.panelDesktop.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelDesktop.Controls.Add(this.label1);
             this.panelDesktop.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panelDesktop.Location = new System.Drawing.Point(226, 84);
             this.panelDesktop.Name = "panelDesktop";
@@ -249,27 +274,15 @@ namespace Fitness_Instructor
             this.panelDesktop.TabIndex = 3;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
-            // caloriesButton
+            // label1
             // 
-            this.caloriesButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.caloriesButton.FlatAppearance.BorderSize = 0;
-            this.caloriesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.caloriesButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.caloriesButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.caloriesButton.IconChar = FontAwesome.Sharp.IconChar.FireAlt;
-            this.caloriesButton.IconColor = System.Drawing.Color.Gainsboro;
-            this.caloriesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.caloriesButton.IconSize = 42;
-            this.caloriesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.caloriesButton.Location = new System.Drawing.Point(0, 320);
-            this.caloriesButton.Name = "caloriesButton";
-            this.caloriesButton.Size = new System.Drawing.Size(220, 60);
-            this.caloriesButton.TabIndex = 5;
-            this.caloriesButton.Text = "Calculator";
-            this.caloriesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.caloriesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.caloriesButton.UseVisualStyleBackColor = true;
-            this.caloriesButton.Click += new System.EventHandler(this.caloriesButton_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(256, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(561, 59);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Welcome to FITNESS SYSTEM";
             // 
             // Menu
             // 
@@ -293,6 +306,8 @@ namespace Fitness_Instructor
             this.panelTopBar.ResumeLayout(false);
             this.panelTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+            this.panelDesktop.ResumeLayout(false);
+            this.panelDesktop.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -314,5 +329,6 @@ namespace Fitness_Instructor
         private FontAwesome.Sharp.IconButton editButton;
         private FontAwesome.Sharp.IconButton exerciseButton;
         private FontAwesome.Sharp.IconButton caloriesButton;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -116,7 +116,6 @@ E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_In
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.csprojAssemblyReference.cache
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.AddClientForm.resources
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.EditClientForm.resources
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.Forms.ExerciseForm.resources
@@ -132,3 +131,4 @@ E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_In
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.pdb
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.genruntimeconfig.cache
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.CaloriesCalculatorForm.resources
+E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.csproj.AssemblyReference.cache

@@ -57,9 +57,9 @@ namespace Fitness_Instructor
             }
         }
 
-        public void insertCalories(double cals, int Id)
+        public void updateCaloriesBMI(double cals, double BMI, int Id)
         {
-            String query = "UPDATE Clients SET calories = '" + cals + "' WHERE Id = '"+ Id + "'";
+            String query = "UPDATE Clients SET calories = '" + cals + "', BMI = '" + BMI + "' WHERE Id = '" + Id + "'";
   
             command = new SqlCommand(query, connection);
 
@@ -69,25 +69,6 @@ namespace Fitness_Instructor
                 command.ExecuteNonQuery();
                 command.Connection.Close();
                 MessageBox.Show("Успешнa актуализация");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Неуспех");
-            }
-        }
-
-        public void insertBMI(double BMI, int Id)
-        {
-            String query = "UPDATE Clients SET BMI = '" + BMI + "' WHERE Id = '" + Id + "'";
-
-            command = new SqlCommand(query, connection);
-
-            try
-            {
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                command.Connection.Close();
 
             }
             catch (Exception ex)
