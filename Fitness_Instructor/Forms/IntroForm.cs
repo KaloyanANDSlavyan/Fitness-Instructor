@@ -45,9 +45,9 @@ namespace Fitness_Instructor
             else
             {
                 timer1.Stop();
-                Menu m = new Menu();
+                LoginForm loginForm = new LoginForm();
                 this.Hide();
-                m.ShowDialog();
+                loginForm.ShowDialog();
                 this.Close();
             }
          

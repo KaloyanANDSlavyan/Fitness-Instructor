@@ -15,29 +15,39 @@ namespace Fitness_Instructor
         private float height;
         private float weight;
         private DatabaseAccess databaseAccess;
+        private DataRetriever dataRetriever;
 
         public EditClientForm()
         {
             InitializeComponent();
             databaseAccess = new DatabaseAccess();
+            dataRetriever = DataRetriever.Instance;
         }
 
         private void EditClientForm_Load(object sender, EventArgs e)
         {
-            dataGridView.DataSource = databaseAccess.outputClients();
+            dataGridView.DataSource = GetDataGridView();
+        }
+
+        private object GetDataGridView()
+        {
+            if (Equals(dataRetriever.getUsername(), "slavcho44"))
+                return databaseAccess.outputClients(1);
+            else
+                return databaseAccess.outputClients(2);
         }
 
         private void updateButton_Click(object sender, EventArgs e)
         {
            
             databaseAccess.updateClient(clientId, firstNameBox.Text, lastNameBox.Text, ageBox.Text, heightBox.Text, weightBox.Text);
-            dataGridView.DataSource = databaseAccess.outputClients();
+            dataGridView.DataSource = GetDataGridView();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
            databaseAccess.deleteClient(clientId);
-            dataGridView.DataSource = databaseAccess.outputClients();
+            dataGridView.DataSource = GetDataGridView();
         }
 
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

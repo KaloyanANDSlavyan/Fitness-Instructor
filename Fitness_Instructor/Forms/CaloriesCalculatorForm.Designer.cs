@@ -190,7 +190,7 @@ namespace Fitness_Instructor
             this.Controls.Add(this.caloriesButton);
             this.Controls.Add(this.dataGridView1);
             this.Name = "CaloriesCalculatorForm";
-            this.Text = "CaloriesCalculatorForm";
+            this.Text = "Calculator - Calories and Body Mass Index";
             this.Load += new System.EventHandler(this.CaloriesCalculatorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

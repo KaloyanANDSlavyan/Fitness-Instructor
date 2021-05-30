@@ -238,7 +238,7 @@ namespace Fitness_Instructor
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
             this.Name = "EditClientForm";
-            this.Text = "EditClientForm";
+            this.Text = "Edit Clients";
             this.Load += new System.EventHandler(this.EditClientForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

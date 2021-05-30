@@ -16,11 +16,21 @@ namespace Fitness_Instructor
         private double calories;
         private double BMI;
         private DatabaseAccess databaseAccess;
+        private DataRetriever dataRetriever;
 
         public CaloriesCalculatorForm()
         {
             InitializeComponent();
             databaseAccess = new DatabaseAccess();
+            dataRetriever = DataRetriever.Instance;
+        }
+
+        private object GetDataGridView()
+        {
+            if (Equals(dataRetriever.getUsername(), "slavcho44"))
+                return databaseAccess.outputClients(1);
+            else
+                return databaseAccess.outputClients(2);
         }
 
         private void caloriesButton_Click(object sender, EventArgs e)
@@ -38,7 +48,7 @@ namespace Fitness_Instructor
                 BMI = calcBMI(client);
                 BMI = Math.Round(BMI, 2);
             databaseAccess.updateCaloriesBMI(calories, BMI, clientId);
-            dataGridView1.DataSource = databaseAccess.outputClients();
+            dataGridView1.DataSource = GetDataGridView();
             }
         }
 
@@ -104,7 +114,7 @@ namespace Fitness_Instructor
 
         private void CaloriesCalculatorForm_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = databaseAccess.outputClients();
+            dataGridView1.DataSource = GetDataGridView();
             comboBox1.Items.Add("Sedentary (little or no exercise)");
             comboBox1.Items.Add("Lightly active (light exercise/sports 1-3 days/week)");
             comboBox1.Items.Add("Moderate (exercise/sports 3-5 days/week)");

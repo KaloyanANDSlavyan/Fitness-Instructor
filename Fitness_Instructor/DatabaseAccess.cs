@@ -37,10 +37,10 @@ namespace Fitness_Instructor
 
 
 
-        public void insertClient(Client client)
+        public void insertClient(Client client, int fk)
         {
-            String query = "insert into Clients (firstName, lastName, age, height, weight, gender) values(N'" + client.FirstName + "',N'" + client.LastName + "','"
-                + client.Age.ToString() + "','" + client.Height.ToString() + "','" + client.Weight.ToString() + "','" + client.Gender + "')";
+            String query = "insert into Clients (firstName, lastName, age, height, weight, gender, Instructor_FK) values(N'" + client.FirstName + "',N'" + client.LastName + "','"
+                + client.Age.ToString() + "','" + client.Height.ToString() + "','" + client.Weight.ToString() + "','" + client.Gender + "','" + fk + "')";
             command = new SqlCommand(query, connection);
 
             try
@@ -77,9 +77,9 @@ namespace Fitness_Instructor
             }
         }
 
-        public object outputClients()
+        public object outputClients(int fk)
         {
-            String query = "SELECT * FROM Clients";
+            String query = "SELECT * FROM Clients WHERE Instructor_FK = '" + fk + "'";
             command = new SqlCommand(query, connection);
             SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
@@ -128,6 +128,16 @@ namespace Fitness_Instructor
         public object selectById(int id)
         {
             String query = "SELECT * FROM Clients WHERE Id = '" + id + "'";
+            command = new SqlCommand(query, connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            return dt;
+        }
+
+        public DataTable selectInstructor(String username, String password)
+        {
+            String query = "SELECT * FROM Instructors WHERE username = '" + username + "' and password = '" + password + "'";
             command = new SqlCommand(query, connection);
             SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable();

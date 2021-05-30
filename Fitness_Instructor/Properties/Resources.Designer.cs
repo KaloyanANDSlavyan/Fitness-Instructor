@@ -113,6 +113,16 @@ namespace Fitness_Instructor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap home_pic {
+            get {
+                object obj = ResourceManager.GetObject("home-pic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Quadriceps {
             get {
                 object obj = ResourceManager.GetObject("Quadriceps", resourceCulture);

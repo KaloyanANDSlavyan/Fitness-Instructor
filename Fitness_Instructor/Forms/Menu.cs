@@ -16,15 +16,17 @@ namespace Fitness_Instructor
     {
         // Fields
         private DatabaseAccess db;
+        private DataRetriever dataRetriever;
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
         // Constructor
         public Menu()
         {
-
             InitializeComponent();
             db = new DatabaseAccess();
+            dataRetriever = DataRetriever.Instance;
+            userLabel.Text = dataRetriever.getUsername();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
@@ -175,6 +177,20 @@ namespace Fitness_Instructor
         {
             activateButton(sender, RGBColors.color2);
             openChildForm(new CaloriesCalculatorForm());
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            this.Hide();
+            loginForm.ShowDialog();
+            this.Close();
+
+        }
+
+        private void reportsButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

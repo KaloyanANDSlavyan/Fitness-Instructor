@@ -277,7 +277,7 @@ namespace Fitness_Instructor
             this.Controls.Add(this.addClientButton);
             this.Controls.Add(this.firstNameBox);
             this.Name = "AddClientForm";
-            this.Text = "AddClientForm";
+            this.Text = "Add Client";
             this.Load += new System.EventHandler(this.AddClientForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

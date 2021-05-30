@@ -30,6 +30,7 @@ namespace Fitness_Instructor
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.reportsButton = new FontAwesome.Sharp.IconButton();
             this.caloriesButton = new FontAwesome.Sharp.IconButton();
             this.exerciseButton = new FontAwesome.Sharp.IconButton();
             this.editButton = new FontAwesome.Sharp.IconButton();
@@ -37,6 +38,7 @@ namespace Fitness_Instructor
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Label();
             this.panelTopBar = new System.Windows.Forms.Panel();
+            this.logoutButton = new FontAwesome.Sharp.IconButton();
             this.minimizeButton = new System.Windows.Forms.Button();
             this.restoreButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
@@ -44,17 +46,26 @@ namespace Fitness_Instructor
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.userLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.panelDesktop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.panelMenu.Controls.Add(this.reportsButton);
             this.panelMenu.Controls.Add(this.caloriesButton);
             this.panelMenu.Controls.Add(this.exerciseButton);
             this.panelMenu.Controls.Add(this.editButton);
@@ -65,6 +76,28 @@ namespace Fitness_Instructor
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 753);
             this.panelMenu.TabIndex = 0;
+            // 
+            // reportsButton
+            // 
+            this.reportsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.reportsButton.FlatAppearance.BorderSize = 0;
+            this.reportsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reportsButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.reportsButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.reportsButton.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
+            this.reportsButton.IconColor = System.Drawing.Color.Gainsboro;
+            this.reportsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.reportsButton.IconSize = 42;
+            this.reportsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reportsButton.Location = new System.Drawing.Point(0, 380);
+            this.reportsButton.Name = "reportsButton";
+            this.reportsButton.Size = new System.Drawing.Size(220, 60);
+            this.reportsButton.TabIndex = 6;
+            this.reportsButton.Text = "Reports";
+            this.reportsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reportsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.reportsButton.UseVisualStyleBackColor = true;
+            this.reportsButton.Click += new System.EventHandler(this.reportsButton_Click);
             // 
             // caloriesButton
             // 
@@ -178,6 +211,7 @@ namespace Fitness_Instructor
             // panelTopBar
             // 
             this.panelTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.panelTopBar.Controls.Add(this.logoutButton);
             this.panelTopBar.Controls.Add(this.minimizeButton);
             this.panelTopBar.Controls.Add(this.restoreButton);
             this.panelTopBar.Controls.Add(this.exitButton);
@@ -189,6 +223,23 @@ namespace Fitness_Instructor
             this.panelTopBar.Size = new System.Drawing.Size(1062, 75);
             this.panelTopBar.TabIndex = 1;
             this.panelTopBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTopBar_MouseDown);
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.logoutButton.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.logoutButton.IconColor = System.Drawing.SystemColors.Highlight;
+            this.logoutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.logoutButton.IconSize = 28;
+            this.logoutButton.Location = new System.Drawing.Point(912, 13);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Padding = new System.Windows.Forms.Padding(1);
+            this.logoutButton.Size = new System.Drawing.Size(29, 29);
+            this.logoutButton.TabIndex = 5;
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // minimizeButton
             // 
@@ -266,6 +317,13 @@ namespace Fitness_Instructor
             // panelDesktop
             // 
             this.panelDesktop.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelDesktop.Controls.Add(this.panel5);
+            this.panelDesktop.Controls.Add(this.panel4);
+            this.panelDesktop.Controls.Add(this.panel3);
+            this.panelDesktop.Controls.Add(this.panel2);
+            this.panelDesktop.Controls.Add(this.pictureBox1);
+            this.panelDesktop.Controls.Add(this.panel1);
+            this.panelDesktop.Controls.Add(this.userLabel);
             this.panelDesktop.Controls.Add(this.label1);
             this.panelDesktop.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panelDesktop.Location = new System.Drawing.Point(226, 84);
@@ -274,15 +332,76 @@ namespace Fitness_Instructor
             this.panelDesktop.TabIndex = 3;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.Location = new System.Drawing.Point(230, 134);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(644, 3);
+            this.panel1.TabIndex = 11;
+            // 
+            // userLabel
+            // 
+            this.userLabel.AutoSize = true;
+            this.userLabel.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.userLabel.ForeColor = System.Drawing.Color.Gainsboro;
+            this.userLabel.Location = new System.Drawing.Point(562, 45);
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Size = new System.Drawing.Size(147, 59);
+            this.userLabel.TabIndex = 1;
+            this.userLabel.Text = "label2";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(256, 45);
+            this.label1.Location = new System.Drawing.Point(342, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(561, 59);
+            this.label1.Size = new System.Drawing.Size(214, 59);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome to FITNESS SYSTEM";
+            this.label1.Text = "Welcome,";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Fitness_Instructor.Properties.Resources.home_pic;
+            this.pictureBox1.Location = new System.Drawing.Point(240, 194);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(620, 350);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel2.Location = new System.Drawing.Point(240, 194);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(620, 3);
+            this.panel2.TabIndex = 12;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel3.Location = new System.Drawing.Point(240, 541);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(620, 3);
+            this.panel3.TabIndex = 13;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel4.Location = new System.Drawing.Point(240, 194);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(3, 350);
+            this.panel4.TabIndex = 14;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel5.Location = new System.Drawing.Point(857, 194);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(3, 350);
+            this.panel5.TabIndex = 15;
             // 
             // Menu
             // 
@@ -308,6 +427,7 @@ namespace Fitness_Instructor
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,5 +450,14 @@ namespace Fitness_Instructor
         private FontAwesome.Sharp.IconButton exerciseButton;
         private FontAwesome.Sharp.IconButton caloriesButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label userLabel;
+        private FontAwesome.Sharp.IconButton logoutButton;
+        private FontAwesome.Sharp.IconButton reportsButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -11,12 +11,14 @@ namespace Fitness_Instructor
     public partial class AddClientForm : Form
     {
         private DatabaseAccess db;
+        private DataRetriever dataRetriever;
         private string gender = "undefined";
         private TextValidator validator;
         public AddClientForm()
         {
             InitializeComponent();
             db = new DatabaseAccess();
+            dataRetriever = DataRetriever.Instance;
         }
 
         private void AddClientForm_Load(object sender, EventArgs e)
@@ -34,8 +36,10 @@ namespace Fitness_Instructor
             client.Height = float.Parse(heightBox.Text);
             client.Weight = float.Parse(weightBox.Text);
             client.Gender = gender;
-
-            db.insertClient(client);
+            if(Equals(dataRetriever.getUsername(), "slavcho44"))
+                db.insertClient(client, 1);
+            else
+                db.insertClient(client, 2);
         }
 
         private void maleButton_CheckedChanged(object sender, EventArgs e)
