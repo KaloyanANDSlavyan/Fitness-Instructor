@@ -190,7 +190,14 @@ namespace Fitness_Instructor
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
+            activateButton(sender, RGBColors.color2);
+            openChildForm(new Reports());
+        }
 
+        private void testButton_Click(object sender, EventArgs e)
+        {
+            activateButton(sender, RGBColors.color2);
+            openChildForm(new InfoFProgramForm());
         }
     }
 }

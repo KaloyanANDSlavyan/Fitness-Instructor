@@ -133,3 +133,7 @@ E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_In
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.CaloriesCalculatorForm.resources
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.csproj.AssemblyReference.cache
 E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.LoginForm.resources
+E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.Forms.Reports.resources
+E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.Forms.FProgramForm1.resources
+E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.Forms.FProgramForm2.resources
+E:\Study related\VS Projects\Fitness_Instructor v2\Fitness-Instructor\Fitness_Instructor\obj\Debug\netcoreapp3.1\Fitness_Instructor.Forms.InfoFProgramForm.resources

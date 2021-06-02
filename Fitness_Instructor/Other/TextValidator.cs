@@ -16,7 +16,7 @@ namespace Fitness_Instructor
             this.data = data;
         }
 
-        public bool regexValidator()     // @"(^[А-ЯA-Z][а-яa-z]{2,}$)"
+        public bool regexValidator()
         {
 
             Regex re = new Regex(strRegex);
@@ -25,5 +25,6 @@ namespace Fitness_Instructor
             else
                 return (false);
         }
+
     }
 }

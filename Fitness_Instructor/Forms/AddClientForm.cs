@@ -28,18 +28,25 @@ namespace Fitness_Instructor
 
         private void addClientButton_Click(object sender, EventArgs e)
         {
-            Client client = new Client();
+            try
+            {
+                Client client = new Client();
 
-            client.FirstName = firstNameBox.Text;
-            client.LastName = lastNameBox.Text;
-            client.Age = int.Parse(ageBox.Text);
-            client.Height = float.Parse(heightBox.Text);
-            client.Weight = float.Parse(weightBox.Text);
-            client.Gender = gender;
-            if(Equals(dataRetriever.getUsername(), "slavcho44"))
-                db.insertClient(client, 1);
-            else
-                db.insertClient(client, 2);
+                client.FirstName = firstNameBox.Text;
+                client.LastName = lastNameBox.Text;
+                client.Age = int.Parse(ageBox.Text);
+                client.Height = float.Parse(heightBox.Text);
+                client.Weight = float.Parse(weightBox.Text);
+                client.Gender = gender;
+                if (Equals(dataRetriever.getUsername(), "slavcho44"))
+                    db.insertClient(client, 1);
+                else
+                    db.insertClient(client, 2);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
         }
 
         private void maleButton_CheckedChanged(object sender, EventArgs e)

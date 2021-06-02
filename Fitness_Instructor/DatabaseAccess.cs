@@ -34,6 +34,16 @@ namespace Fitness_Instructor
         }
 
 
+        public object outputExercises()
+        {
+            String query = "SELECT * FROM Exercises";
+            command = new SqlCommand(query, connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            return dt;
+        }
+
 
 
 
@@ -56,6 +66,45 @@ namespace Fitness_Instructor
                 MessageBox.Show("Неуспех");
             }
         }
+
+        public int insertClients_Programs(int clientFk, int programFk)
+        {
+            String query = "insert into Clients_Programs (Client_FK, Program_FK) values('" + clientFk.ToString() + "','" + programFk.ToString() + "'); SELECT SCOPE_IDENTITY()";
+            command = new SqlCommand(query, connection);
+            int id = 0;
+            try
+            {
+                command.Connection.Open();
+                id = Convert.ToInt32(command.ExecuteScalar());
+                command.Connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Неуспех");
+            }
+
+            return id;
+        }
+
+        public void insertClients_Programs_Exercises(int client_ProgramId, int exerciseId, int numOfReps, int instructorId)
+        {
+            String query = "insert into Clients_Programs_Exercises (Client_Program_FK, Exercise_FK, numOfReps, Instructor_FK) values('" + client_ProgramId + "','" + exerciseId + "','" + numOfReps + "','" + instructorId + "')";
+            command = new SqlCommand(query, connection);
+
+            try
+            {
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+                command.Connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Неуспех");
+            }
+        }
+
+
 
         public void updateCaloriesBMI(double cals, double BMI, int Id)
         {
@@ -80,6 +129,17 @@ namespace Fitness_Instructor
         public object outputClients(int fk)
         {
             String query = "SELECT * FROM Clients WHERE Instructor_FK = '" + fk + "'";
+
+            command = new SqlCommand(query, connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            return dt;
+        }
+
+        public object outputPrograms()
+        {
+            String query = "SELECT * FROM Programs";
             command = new SqlCommand(query, connection);
             SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
@@ -138,6 +198,48 @@ namespace Fitness_Instructor
         public DataTable selectInstructor(String username, String password)
         {
             String query = "SELECT * FROM Instructors WHERE username = '" + username + "' and password = '" + password + "'";
+            command = new SqlCommand(query, connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            return dt;
+        }
+
+        public object outputClientsPrograms(int clientId, int programId)
+        {
+            String query = "SELECT * FROM Clients_Programs WHERE Client_FK = '" + clientId + "' and Program_FK = '" + programId + "'";
+            command = new SqlCommand(query, connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            return dt;
+        }
+
+        public object report(double value, int fk)
+        {
+            String query = @"SELECT CONCAT(c.firstName, ' ', c.lastName) as name,
+            c.BMI as 'Body Mass Index', i.name as 'Fitness Instructor'
+            FROM (Clients c INNER JOIN Instructors i ON c.Instructor_FK = i.Id)
+            WHERE BMI >='" + value + "'AND Instructor_FK = '" + fk + "'";
+            command = new SqlCommand(query, connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            return dt;
+        }
+
+        public object report2(int id)
+        {
+            String query = @"SELECT c.firstName, p.ProgramName, e.Name, numOfReps, i.name 
+            FROM ((((( Clients_Programs_Exercises cpe INNER JOIN Exercises e 
+            ON cpe.Exercise_FK = e.Id) 
+            INNER JOIN Clients_Programs cp ON 
+            cpe.Client_Program_FK = cp.Id) 
+            INNER JOIN Clients c ON cp.Client_FK = c.Id) 
+            INNER JOIN Programs p ON cp.Program_FK = p.Id) 
+            INNER JOIN  Instructors i ON 
+            cpe.Instructor_FK = i.Id)
+            WHERE Client_Program_FK = '" + id + "'";
             command = new SqlCommand(query, connection);
             SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable();

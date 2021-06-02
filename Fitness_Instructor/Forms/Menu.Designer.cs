@@ -30,6 +30,7 @@ namespace Fitness_Instructor
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.fPrgButton = new FontAwesome.Sharp.IconButton();
             this.reportsButton = new FontAwesome.Sharp.IconButton();
             this.caloriesButton = new FontAwesome.Sharp.IconButton();
             this.exerciseButton = new FontAwesome.Sharp.IconButton();
@@ -46,14 +47,14 @@ namespace Fitness_Instructor
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.userLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTopBar.SuspendLayout();
@@ -65,6 +66,7 @@ namespace Fitness_Instructor
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.panelMenu.Controls.Add(this.fPrgButton);
             this.panelMenu.Controls.Add(this.reportsButton);
             this.panelMenu.Controls.Add(this.caloriesButton);
             this.panelMenu.Controls.Add(this.exerciseButton);
@@ -76,6 +78,28 @@ namespace Fitness_Instructor
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 753);
             this.panelMenu.TabIndex = 0;
+            // 
+            // fPrgButton
+            // 
+            this.fPrgButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fPrgButton.FlatAppearance.BorderSize = 0;
+            this.fPrgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fPrgButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fPrgButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.fPrgButton.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.fPrgButton.IconColor = System.Drawing.Color.Gainsboro;
+            this.fPrgButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.fPrgButton.IconSize = 42;
+            this.fPrgButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.fPrgButton.Location = new System.Drawing.Point(0, 440);
+            this.fPrgButton.Name = "fPrgButton";
+            this.fPrgButton.Size = new System.Drawing.Size(220, 60);
+            this.fPrgButton.TabIndex = 7;
+            this.fPrgButton.Text = "Fitness Program";
+            this.fPrgButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.fPrgButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.fPrgButton.UseVisualStyleBackColor = true;
+            this.fPrgButton.Click += new System.EventHandler(this.testButton_Click);
             // 
             // reportsButton
             // 
@@ -332,6 +356,48 @@ namespace Fitness_Instructor
             this.panelDesktop.TabIndex = 3;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel5.Location = new System.Drawing.Point(857, 194);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(3, 350);
+            this.panel5.TabIndex = 15;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel4.Location = new System.Drawing.Point(240, 194);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(3, 350);
+            this.panel4.TabIndex = 14;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel3.Location = new System.Drawing.Point(240, 541);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(620, 3);
+            this.panel3.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel2.Location = new System.Drawing.Point(240, 194);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(620, 3);
+            this.panel2.TabIndex = 12;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Fitness_Instructor.Properties.Resources.home_pic;
+            this.pictureBox1.Location = new System.Drawing.Point(240, 194);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(620, 350);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
@@ -360,48 +426,6 @@ namespace Fitness_Instructor
             this.label1.Size = new System.Drawing.Size(214, 59);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome,";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Fitness_Instructor.Properties.Resources.home_pic;
-            this.pictureBox1.Location = new System.Drawing.Point(240, 194);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(620, 350);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel2.Location = new System.Drawing.Point(240, 194);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(620, 3);
-            this.panel2.TabIndex = 12;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel3.Location = new System.Drawing.Point(240, 541);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(620, 3);
-            this.panel3.TabIndex = 13;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel4.Location = new System.Drawing.Point(240, 194);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(3, 350);
-            this.panel4.TabIndex = 14;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel5.Location = new System.Drawing.Point(857, 194);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(3, 350);
-            this.panel5.TabIndex = 15;
             // 
             // Menu
             // 
@@ -459,5 +483,6 @@ namespace Fitness_Instructor
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton fPrgButton;
     }
 }

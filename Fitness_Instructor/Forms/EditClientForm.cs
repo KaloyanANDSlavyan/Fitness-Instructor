@@ -16,6 +16,7 @@ namespace Fitness_Instructor
         private float weight;
         private DatabaseAccess databaseAccess;
         private DataRetriever dataRetriever;
+        private TextValidator validator;
 
         public EditClientForm()
         {
@@ -61,6 +62,48 @@ namespace Fitness_Instructor
     
             weightBox.Text = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
 
+        }
+
+        private void base_Validating(TextBox textBox, string errorMsg, String pattern, CancelEventArgs e)
+        {
+            validator = new TextValidator(pattern, textBox.Text);
+            bool state = validator.regexValidator();
+
+            if (state)
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBox, "");
+            }
+            else
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox, errorMsg);
+            }
+        }
+
+        private void firstNameBox_Validating(object sender, CancelEventArgs e)
+        {
+            base_Validating(firstNameBox, "Invalid format", @"(^[А-ЯA-Z][а-яa-z]{2,}$)", e);
+        }
+
+        private void lastNameBox_Validating(object sender, CancelEventArgs e)
+        {
+            base_Validating(lastNameBox, "Invalid format", @"(^[А-ЯA-Z][а-яa-z]{2,}$)", e);
+        }
+
+        private void ageBox_Validating(object sender, CancelEventArgs e)
+        {
+            base_Validating(ageBox, "Invalid format", @"^\d{0,3}$", e);
+        }
+
+        private void heightBox_Validating(object sender, CancelEventArgs e)
+        {
+            base_Validating(heightBox, "Invalid format", @"^\d{0,3}$", e);
+        }
+
+        private void weightBox_Validating(object sender, CancelEventArgs e)
+        {
+            base_Validating(weightBox, "Invalid format", @"^\d{0,3}$", e);
         }
     }
 }

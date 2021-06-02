@@ -22,5 +22,17 @@
     <Compile Update="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FProgramForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FProgramForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\InfoFProgramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
