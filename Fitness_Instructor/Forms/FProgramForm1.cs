@@ -45,7 +45,7 @@ namespace Fitness_Instructor.Forms
             client.FirstName = clientsGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
             dataRetriever.setClientId(clientId);
             dataRetriever.setClient(client);
-            clientsGridView.Hide();
+
         }
 
         private void programsGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

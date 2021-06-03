@@ -21,7 +21,7 @@ namespace Fitness_Instructor
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-           DataTable dataTable = databaseAccess.selectInstructor(usernameBox.Text.Trim(), passwordBox.Text.Trim());
+           DataTable dataTable = databaseAccess.authenticateInstructor(usernameBox.Text.Trim(), passwordBox.Text.Trim());
             if(dataTable.Rows.Count == 1)
             {
                 dataRetriever = DataRetriever.Instance;

@@ -157,7 +157,6 @@ namespace Fitness_Instructor
                 command.Connection.Open();
                 command.ExecuteNonQuery();
                 command.Connection.Close();
-                MessageBox.Show("Успешно изтрит клиент!");
 
             }
             catch (Exception ex)
@@ -195,7 +194,7 @@ namespace Fitness_Instructor
             return dt;
         }
 
-        public DataTable selectInstructor(String username, String password)
+        public DataTable authenticateInstructor(String username, String password)
         {
             String query = "SELECT * FROM Instructors WHERE username = '" + username + "' and password = '" + password + "'";
             command = new SqlCommand(query, connection);
