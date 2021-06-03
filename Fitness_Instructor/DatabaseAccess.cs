@@ -86,9 +86,9 @@ namespace Fitness_Instructor
             return id;
         }
 
-        public void insertClients_Programs_Exercises(int client_ProgramId, int exerciseId, int numOfReps, int instructorId)
+        public void insertClients_Programs_Exercises(int client_ProgramId, int exerciseId, int numOfReps)
         {
-            String query = "insert into Clients_Programs_Exercises (Client_Program_FK, Exercise_FK, numOfReps, Instructor_FK) values('" + client_ProgramId + "','" + exerciseId + "','" + numOfReps + "','" + instructorId + "')";
+            String query = "insert into Clients_Programs_Exercises (Client_Program_FK, Exercise_FK, numOfReps) values('" + client_ProgramId + "','" + exerciseId + "','" + numOfReps + "')";
             command = new SqlCommand(query, connection);
 
             try
@@ -215,12 +215,12 @@ namespace Fitness_Instructor
             return dt;
         }
 
-        public object report(double value, int fk)
+        public object report(int instructorId)
         {
-            String query = @"SELECT CONCAT(c.firstName, ' ', c.lastName) as name,
-            c.BMI as 'Body Mass Index', i.name as 'Fitness Instructor'
-            FROM (Clients c INNER JOIN Instructors i ON c.Instructor_FK = i.Id)
-            WHERE BMI >='" + value + "'AND Instructor_FK = '" + fk + "'";
+            String query = @"SELECT cp.Id, c.firstName, p.ProgramName, p.Description
+            FROM ((Clients_Programs cp INNER JOIN Clients c
+            ON cp.Client_FK = c.Id) INNER JOIN Programs p
+            ON cp.Program_FK = p.Id) WHERE c.Instructor_FK = '" + instructorId + "'";
             command = new SqlCommand(query, connection);
             SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
@@ -230,7 +230,7 @@ namespace Fitness_Instructor
 
         public object report2(int id)
         {
-            String query = @"SELECT c.firstName, p.ProgramName, e.Name, numOfReps, i.name 
+            String query = @"SELECT c.firstName, p.ProgramName, e.Name as 'Exercise', numOfReps as 'Repetitions', i.name as 'Instructor'
             FROM ((((( Clients_Programs_Exercises cpe INNER JOIN Exercises e 
             ON cpe.Exercise_FK = e.Id) 
             INNER JOIN Clients_Programs cp ON 
@@ -238,7 +238,7 @@ namespace Fitness_Instructor
             INNER JOIN Clients c ON cp.Client_FK = c.Id) 
             INNER JOIN Programs p ON cp.Program_FK = p.Id) 
             INNER JOIN  Instructors i ON 
-            cpe.Instructor_FK = i.Id)
+            c.Instructor_FK = i.Id)
             WHERE Client_Program_FK = '" + id + "'";
             command = new SqlCommand(query, connection);
             SqlDataAdapter dataAdapter = new SqlDataAdapter(command);

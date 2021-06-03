@@ -49,7 +49,7 @@ namespace Fitness_Instructor.Forms
             // 
             this.enterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enterButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.enterButton.Location = new System.Drawing.Point(425, 493);
+            this.enterButton.Location = new System.Drawing.Point(391, 490);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(167, 34);
             this.enterButton.TabIndex = 1;

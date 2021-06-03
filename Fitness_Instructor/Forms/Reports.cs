@@ -12,31 +12,30 @@ namespace Fitness_Instructor.Forms
     {
         private DatabaseAccess databaseAccess;
         private DataRetriever dataRetriever = DataRetriever.Instance;
+        private int ClientsProgramsId;
         public Reports()
         {
             InitializeComponent();
             databaseAccess = new DatabaseAccess();
         }
 
-        private object GetDataGridView()
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (Equals(dataRetriever.getUsername(), "slavcho44"))
-                return databaseAccess.report(double.Parse(textBox1.Text), 1);
-            else
-                return databaseAccess.report(double.Parse(textBox1.Text), 2);
+            ClientsProgramsId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            dataGridView2.DataSource = databaseAccess.report2(ClientsProgramsId);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private int getInstructor()
         {
-            try
-            {
-                dataGridView1.DataSource = GetDataGridView();
-            }
-            catch(Exception)
-            {
-                MessageBox.Show("Error");
-            }
-            
+            if (Equals(dataRetriever.getUsername(), "slavcho44"))
+                return 1;
+            else
+                return 2;
+        }
+
+        private void Reports_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = databaseAccess.report(getInstructor());
         }
     }
 }

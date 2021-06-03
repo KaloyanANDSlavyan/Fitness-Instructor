@@ -117,7 +117,7 @@ namespace Fitness_Instructor
             this.reportsButton.Name = "reportsButton";
             this.reportsButton.Size = new System.Drawing.Size(220, 60);
             this.reportsButton.TabIndex = 6;
-            this.reportsButton.Text = "Reports";
+            this.reportsButton.Text = "View Programs";
             this.reportsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.reportsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.reportsButton.UseVisualStyleBackColor = true;

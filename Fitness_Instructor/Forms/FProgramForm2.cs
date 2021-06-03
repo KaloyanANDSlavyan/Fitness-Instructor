@@ -45,7 +45,7 @@ namespace Fitness_Instructor.Forms
             try
             {
                 reps = Convert.ToInt32(repsBox.Text);
-                databaseAccess.insertClients_Programs_Exercises(clientsProgramsId, exerciseId, reps, getInstructor());
+                databaseAccess.insertClients_Programs_Exercises(clientsProgramsId, exerciseId, reps);
                 reportGridView.DataSource = databaseAccess.report2(clientsProgramsId);
             }
             catch (Exception)
