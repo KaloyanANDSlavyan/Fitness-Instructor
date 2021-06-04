@@ -40,9 +40,15 @@ namespace Fitness_Instructor
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-           
-            databaseAccess.updateClient(clientId, firstNameBox.Text, lastNameBox.Text, ageBox.Text, heightBox.Text, weightBox.Text);
-            dataGridView.DataSource = GetDataGridView();
+           if(String.IsNullOrEmpty(firstNameBox.Text) || String.IsNullOrEmpty(lastNameBox.Text) || String.IsNullOrEmpty(ageBox.Text) || String.IsNullOrEmpty(heightBox.Text) || String.IsNullOrEmpty(weightBox.Text))
+            {
+                MessageBox.Show("Empty fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                databaseAccess.updateClient(clientId, firstNameBox.Text, lastNameBox.Text, ageBox.Text, heightBox.Text, weightBox.Text);
+                dataGridView.DataSource = GetDataGridView();
+            }
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

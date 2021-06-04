@@ -33,7 +33,7 @@ namespace Fitness_Instructor
             }
             else
             {
-                MessageBox.Show("Incorrect data!");
+                MessageBox.Show("Entered instructor doesn't exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
 

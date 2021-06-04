@@ -39,7 +39,7 @@ namespace Fitness_Instructor
                 client.Weight = float.Parse(weightBox.Text);
                 client.Gender = gender;
                 if (client.Gender == null)
-                    MessageBox.Show("Please choose a gender!");
+                    MessageBox.Show("Please choose a gender", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     if (Equals(dataRetriever.getUsername(), "slavcho44"))
@@ -50,7 +50,7 @@ namespace Fitness_Instructor
             }
             catch (Exception)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Please fill all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

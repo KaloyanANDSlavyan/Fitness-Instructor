@@ -44,6 +44,7 @@ namespace Fitness_Instructor
             public static Color color1 = Color.FromArgb(172, 126, 241);
             public static Color color2 = Color.FromArgb(3, 148, 252);
         }
+
         // Methods
         private void activateButton(object senderBtn, Color color)
         {
@@ -59,10 +60,10 @@ namespace Fitness_Instructor
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleRight;
                 // Left Border Button
-                leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
+                //leftBorderBtn.BackColor = color;
+                //leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                //leftBorderBtn.Visible = true;
+                //leftBorderBtn.BringToFront();
                 // Icon Current Child Form
                 iconCurrentChildForm.IconChar = currentBtn.IconChar;
                 iconCurrentChildForm.IconColor = color; 
