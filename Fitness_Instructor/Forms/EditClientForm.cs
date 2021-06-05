@@ -14,6 +14,7 @@ namespace Fitness_Instructor
         private int age;
         private float height;
         private float weight;
+        private Client client;
         private DatabaseAccess databaseAccess;
         private DataRetriever dataRetriever;
         private TextValidator validator;
@@ -46,7 +47,13 @@ namespace Fitness_Instructor
             }
             else
             {
-                databaseAccess.updateClient(clientId, firstNameBox.Text, lastNameBox.Text, ageBox.Text, heightBox.Text, weightBox.Text);
+                client = new Client();
+                client.FirstName = firstNameBox.Text;
+                client.LastName = lastNameBox.Text;
+                client.Age = int.Parse(ageBox.Text);
+                client.Height = float.Parse(heightBox.Text);
+                client.Weight = float.Parse(weightBox.Text);
+                databaseAccess.updateClient(clientId, client);
                 dataGridView.DataSource = GetDataGridView();
             }
         }

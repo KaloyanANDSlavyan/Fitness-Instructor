@@ -44,9 +44,6 @@ namespace Fitness_Instructor
             return dt;
         }
 
-
-
-
         public void insertClient(Client client, int fk)
         {
             String query = "insert into Clients (firstName, lastName, age, height, weight, gender, Instructor_FK) values(N'" + client.FirstName + "',N'" + client.LastName + "','"
@@ -165,9 +162,9 @@ namespace Fitness_Instructor
             }
         }
 
-        public void updateClient(int id, String firstName, String lastName, String age, String height, String weight)
+        public void updateClient(int id, Client client)
         {
-            String query = "UPDATE Clients SET firstName= N'" + firstName + "',lastName= N'" + lastName + "',age='" + age + "',height='" + height + "',weight='" + weight + "' WHERE Id='"+ id + "'";
+            String query = "UPDATE Clients SET firstName= N'" + client.FirstName + "',lastName= N'" + client.LastName + "',age='" + client.Age.ToString() + "',height='" + client.Height.ToString() + "',weight='" + client.Weight.ToString() + "' WHERE Id='"+ id + "'";
             command = new SqlCommand(query, connection);
 
             try
@@ -184,29 +181,10 @@ namespace Fitness_Instructor
             }
         }
 
-        public object selectById(int id)
-        {
-            String query = "SELECT * FROM Clients WHERE Id = '" + id + "'";
-            command = new SqlCommand(query, connection);
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-            DataTable dt = new DataTable();
-            dataAdapter.Fill(dt);
-            return dt;
-        }
 
         public DataTable authenticateInstructor(String username, String password)
         {
             String query = "SELECT * FROM Instructors WHERE username = '" + username + "' and password = '" + password + "'";
-            command = new SqlCommand(query, connection);
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-            DataTable dt = new DataTable();
-            dataAdapter.Fill(dt);
-            return dt;
-        }
-
-        public object outputClientsPrograms(int clientId, int programId)
-        {
-            String query = "SELECT * FROM Clients_Programs WHERE Client_FK = '" + clientId + "' and Program_FK = '" + programId + "'";
             command = new SqlCommand(query, connection);
             SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
